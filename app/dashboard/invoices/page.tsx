@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 };
  
 export default async function Page(props: {
-  searchParams?: Promise<{
+  searchParams?: {
     query?: string;
     page?: string;
-  }>;
+  };
 }) {
-  const searchParams = await props.searchParams;
-  const query = searchParams?.query || '';
-  const currentPage = Number(searchParams?.page) || 1;
+  const query = props.searchParams?.query || '';
+  const currentPage = Number(props.searchParams?.page) || 1;
   const totalPages = await fetchInvoicesPages(query);
+
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
