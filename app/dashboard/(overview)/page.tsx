@@ -8,6 +8,10 @@ import {
   LatestInvoicesSkeleton,
   CardsSkeleton,
  } from '@/app/ui/skeletons';
+
+
+export const dynamic = 'force-dynamic';
+
  
 export default async function Page() {
   
